@@ -5,6 +5,7 @@ import { EmployeeService } from './services/employee.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { CoreService } from './core/core.service';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class AppComponent implements OnInit {
   title = 'Angular CRUD App';
+  public totalEmps: number = 0;
 
   displayedColumns: string[] = [
     'id',
@@ -37,7 +39,8 @@ export class AppComponent implements OnInit {
    */
   constructor(
       private _matDialog: MatDialog,
-      private _empService: EmployeeService
+      private _empService: EmployeeService,
+      private _coreService: CoreService
     ) {}
   ngOnInit(): void {
     this.getEmployeeList();
@@ -70,6 +73,7 @@ export class AppComponent implements OnInit {
   getEmployeeList(){
     this._empService.getEmployeeList().subscribe({
       next: (res: any) => {
+        this.totalEmps = res.length;
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
@@ -83,8 +87,7 @@ export class AppComponent implements OnInit {
   deleteEmployee(id: number){
     this._empService.deletEmployee(id).subscribe({
       next: (res: any) => {
-        alert('Employee deleted!');
-        console.info(res);
+        this._coreService.openSnackBar('Employee deleted!', 'done');
         this.getEmployeeList();
       },
       error: (err: any) => {

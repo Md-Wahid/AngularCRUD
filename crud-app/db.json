@@ -2430,52 +2430,16 @@
       "id": 201
     },
     {
-      "firstName": "",
-      "lastName": "",
-      "email": "",
+      "firstName": "Accounts",
+      "lastName": "User",
+      "email": "ac@email.com",
       "dob": "",
-      "gender": "",
-      "education": "",
+      "gender": "others",
+      "education": "Post Graduate",
       "company": "",
-      "experience": "",
-      "package": "",
+      "experience": 0,
+      "package": 0,
       "id": 202
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "dob": "",
-      "gender": "",
-      "education": "",
-      "company": "",
-      "experience": "",
-      "package": "",
-      "id": 204
-    },
-    {
-      "firstName": "dfc",
-      "lastName": "",
-      "email": "",
-      "dob": "",
-      "gender": "",
-      "education": "",
-      "company": "",
-      "experience": "",
-      "package": "",
-      "id": 205
-    },
-    {
-      "firstName": "dxfcvb",
-      "lastName": "",
-      "email": "",
-      "dob": "",
-      "gender": "",
-      "education": "",
-      "company": "",
-      "experience": "",
-      "package": "",
-      "id": 206
     }
   ]
 }
